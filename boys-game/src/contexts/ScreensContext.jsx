@@ -3,6 +3,7 @@ import { createContext, useState, useContext } from "react";
 import { SCREEN_NAMES } from "../constants/screenNames";
 
 import { MakeTeams } from "../pages/MakeTeams";
+import { BoyPhoto } from "../pages/BoyPhoto";
 
 /* Screen
 id: string
@@ -15,7 +16,7 @@ const screens = [
   { id: SCREEN_NAMES.TITLE, component: null },
   { id: SCREEN_NAMES.MAKE_TEAMS, component: MakeTeams },
   { id: SCREEN_NAMES.READY, component: null },
-  { id: SCREEN_NAMES.BOY_PHOTO, component: null },
+  { id: SCREEN_NAMES.BOY_PHOTO, component: BoyPhoto },
   { id: SCREEN_NAMES.ALL_OR_NOTHING_INFO, component: null },
   { id: SCREEN_NAMES.ALL_OR_NOTHING, component: null },
   { id: SCREEN_NAMES.DRUMROLL, component: null },
