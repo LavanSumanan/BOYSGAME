@@ -1,13 +1,14 @@
-import { useState } from "react";
 import { TeamsProvider } from "./contexts/TeamsContext.jsx";
-import { MakeTeams } from "./pages/MakeTeams.jsx";
+import { ScreenProvider } from "./contexts/ScreensContext.jsx";
+import { Screen } from "./components/Screen.jsx";
 
 function App() {
   return (
     <TeamsProvider>
-      <h1>BOYS UP CLOSE</h1>
-      {/* <MakeTeams /> */}
-      
+      <ScreenProvider>
+        <h1>BOYS UP CLOSE</h1> {/* TODO: remove */}
+        <Screen />
+      </ScreenProvider>
     </TeamsProvider>
   );
 }
