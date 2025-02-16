@@ -25,7 +25,6 @@ export const TeamsProvider = ({ children }) => {
   };
 
   const updateScore = (teamId, scoreUpdate) => {
-    console.log(teamId, scoreUpdate);
     setTeams([
       ...teams.map((team) => {
         if (team.id === teamId) {

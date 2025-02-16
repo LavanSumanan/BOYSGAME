@@ -8,8 +8,6 @@ export const MakeTeams = () => {
   const [idInput, setIdInput] = useState(teams[0]?.id);
   const x = teams.length + 1;
 
-  console.log(idInput);
-
   return (
     <>
       <h1>Make Teams</h1>
