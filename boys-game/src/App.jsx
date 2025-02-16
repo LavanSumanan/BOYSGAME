@@ -4,9 +4,12 @@ import { Screen } from "./components/Screen.jsx";
 import { BoysProvider } from "./contexts/BoysContext.jsx";
 import { useEffect } from "react";
 
+const ENV = "development";
+
 function App() {
   useEffect(() => {
     const handleBeforeUnload = (event) => {
+      if (ENV === "development") return; // Don't show prompt in development
       event.preventDefault();
       event.returnValue = "Are you sure you want to leave?"; // Standard for modern browsers
     };
