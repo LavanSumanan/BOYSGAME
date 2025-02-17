@@ -2,26 +2,18 @@ import { createContext, useState, useContext } from "react";
 
 /* Team
 id: string
-iconId: string
+icon: string
 name: string
 score: int
 */
 
 const TeamsContext = createContext();
 
-const generateId = () => {
-  return Math.random().toString(36).substring(7);
-};
-
 export const TeamsProvider = ({ children }) => {
   const [teams, setTeams] = useState([]);
 
-  const addTeam = (name, iconId) => {
-    setTeams([...teams, { id: generateId(), iconId, name, score: 0 }]);
-  };
-
-  const removeTeam = (id) => {
-    setTeams([...teams.filter((team) => team.id !== id)]);
+  const addTeams = (teams) => {
+    setTeams(teams.map((team) => ({ ...team, score: 0 })));
   };
 
   const updateScore = (teamId, scoreUpdate) => {
@@ -36,7 +28,7 @@ export const TeamsProvider = ({ children }) => {
   };
 
   return (
-    <TeamsContext.Provider value={{ teams, addTeam, removeTeam, updateScore }}>
+    <TeamsContext.Provider value={{ teams, addTeams, updateScore }}>
       {children}
     </TeamsContext.Provider>
   );

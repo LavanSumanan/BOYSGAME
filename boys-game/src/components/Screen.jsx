@@ -1,7 +1,7 @@
-import { SCREEN_NAMES } from "../constants/screenNames";
-import { useScreens } from "../contexts/ScreensContext";
-
 import { useState } from "react";
+import { useScreens } from "../contexts/ScreensContext";
+import { SCREEN_NAMES } from "../constants/screenNames";
+import { TeamScoresFooter } from "./TeamScoresFooter";
 
 export const Screen = () => {
   const { currentScreen, setScreen } = useScreens();
@@ -29,8 +29,9 @@ export const Screen = () => {
       >
         Select Screen
       </button>
-      <h1>{currentScreen.id}</h1>
+      <label>Selected screen: {currentScreen.id}</label>
       {currentScreen.component && <currentScreen.component />}
+      {currentScreen.hasFooter && <TeamScoresFooter />}
     </div>
   );
 };

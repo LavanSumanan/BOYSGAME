@@ -7,4 +7,5 @@ export const SCREEN_NAMES = {
   ALL_OR_NOTHING: "all-or-nothing",
   DRUMROLL: "drumroll",
   STANDINGS: "standings",
+  ERROR: "error",
 };
