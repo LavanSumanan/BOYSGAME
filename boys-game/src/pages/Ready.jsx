@@ -11,7 +11,7 @@ export const Ready = () => {
   useEffect(() => {
     if (index < TEXT_TO_DISPLAY.length) {
       const timer = setTimeout(() => setIndex((prev) => prev + 1), 1000);
-      return () => clearTimeout(timer); // Cleanup timer on unmount
+      return () => clearTimeout(timer);
     } else {
       setScreen(SCREEN_NAMES.BOY_PHOTO);
     }

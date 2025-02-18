@@ -12,7 +12,7 @@ export const Title = () => {
           setScreen(SCREEN_NAMES.MAKE_TEAMS);
         }}
       >
-        Make Teams
+        Start!
       </button>
     </div>
   );
