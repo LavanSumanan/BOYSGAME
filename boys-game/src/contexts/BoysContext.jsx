@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react";
-import { BOY_PHOTO_NAMES, BOY_VIDEO_NAMES } from "../constants/boyNames";
+import { BOY_MEDIA_URLS } from "../constants/boyMedia";
 
 /* Boy
 id: string
@@ -12,21 +12,33 @@ const BoysContext = createContext();
 
 const boys = [
   {
+    id: "jules",
+    photoId: BOY_MEDIA_URLS.JULES.PHOTO,
+    videoId: BOY_MEDIA_URLS.JULES.VIDEO,
+    pointValue: 1,
+  },
+  {
+    id: "jerry",
+    photoId: BOY_MEDIA_URLS.JERRY.PHOTO,
+    videoId: BOY_MEDIA_URLS.JERRY.VIDEO,
+    pointValue: 10,
+  },
+  {
     id: "colin",
-    photoId: BOY_PHOTO_NAMES.COLIN,
-    videoId: BOY_VIDEO_NAMES.COLIN,
+    photoId: BOY_MEDIA_URLS.COLIN.PHOTO,
+    videoId: BOY_MEDIA_URLS.COLIN.VIDEO,
     pointValue: 1,
   },
   {
     id: "anthony",
-    photoId: BOY_PHOTO_NAMES.ANTHONY,
-    videoId: BOY_VIDEO_NAMES.ANTHONY,
+    photoId: BOY_MEDIA_URLS.ANTHONY.PHOTO,
+    videoId: BOY_MEDIA_URLS.ANTHONY.VIDEO,
     pointValue: 1,
   },
   {
     id: "kwethan",
-    photoId: BOY_PHOTO_NAMES.KWETHAN,
-    videoId: BOY_VIDEO_NAMES.KWETHAN,
+    photoId: BOY_MEDIA_URLS.KWETHAN.PHOTO,
+    videoId: BOY_MEDIA_URLS.KWETHAN.VIDEO,
     pointValue: 1,
   },
 ];
