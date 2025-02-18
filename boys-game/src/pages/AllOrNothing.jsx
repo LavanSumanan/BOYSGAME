@@ -9,10 +9,10 @@ export const AllOrNothing = () => {
 
   const SECONDS_TO_GUESS = 5;
   const [timeLeft, setTimeLeft] = useState(SECONDS_TO_GUESS);
-  const displayText = timeLeft === 0 ? "Time's up!" : `Guess now! ${timeLeft}`;
+  const displayText = timeLeft < 1 ? "Time's up!" : `Guess now! ${timeLeft}`;
 
   useEffect(() => {
-    if (timeLeft > 0) {
+    if (timeLeft >= 0) {
       const timer = setTimeout(() => setTimeLeft((prev) => prev - 1), 1000);
       return () => clearTimeout(timer);
     } else {
