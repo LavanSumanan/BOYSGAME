@@ -27,8 +27,12 @@ export const TeamsProvider = ({ children }) => {
     ]);
   };
 
+  const resetTeams = () => {
+    setTeams([]);
+  };
+
   return (
-    <TeamsContext.Provider value={{ teams, addTeams, updateScore }}>
+    <TeamsContext.Provider value={{ teams, addTeams, updateScore, resetTeams }}>
       {children}
     </TeamsContext.Provider>
   );

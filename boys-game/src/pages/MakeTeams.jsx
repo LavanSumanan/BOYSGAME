@@ -6,9 +6,7 @@ import { TEAM_ICONS } from "../constants/iconNames";
 
 export const MakeTeams = () => {
   const { setScreen } = useScreens();
-  const { addTeams } = useTeams();
-
-  const [teamFormState, setTeamFormState] = useState([]);
+  const { teams, addTeams } = useTeams();
 
   /* teamFormState
   id: string
@@ -16,18 +14,25 @@ export const MakeTeams = () => {
   icon: string
   */
 
-  const icons = Object.values(TEAM_ICONS);
-  const availableIcons = Object.values(TEAM_ICONS).filter(
-    (icon) => !teamFormState.some((team) => team.icon === icon)
+  const [teamFormState, setTeamFormState] = useState(
+    teams.map((team) => ({
+      id: team.id,
+      name: team.name,
+      icon: team.icon,
+    }))
   );
-
-  const [currentTeamId, setCurrentTeamId] = useState(0);
+  const [currentTeamId, setCurrentTeamId] = useState(teams.length);
 
   const generateId = () => {
     let newId = "" + currentTeamId;
     setCurrentTeamId((prev) => prev + 1);
     return newId;
   };
+
+  const icons = Object.values(TEAM_ICONS);
+  const availableIcons = Object.values(TEAM_ICONS).filter(
+    (icon) => !teamFormState.some((team) => team.icon === icon)
+  );
 
   const createTeamForm = () => {
     setTeamFormState([
@@ -61,7 +66,6 @@ export const MakeTeams = () => {
   };
 
   const submitTeams = () => {
-    console.log("current form state:", teamFormState);
     try {
       addTeams(teamFormState);
     } catch (error) {

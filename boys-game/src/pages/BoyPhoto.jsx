@@ -67,12 +67,12 @@ export const BoyPhoto = () => {
         setSubscreen(SUBSCREENS.VIDEO);
       } else if (subscreen.id === SUBSCREENS.VIDEO.id) {
         // save last boy for ALL OR NOTHING
-        if (currentBoyIndex === totalBoys - 1) {
+        if (currentBoyIndex === totalBoys - 2) {
           setScreen(SCREEN_NAMES.ALL_OR_NOTHING_INFO);
         } else {
           setSubscreen(SUBSCREENS.PHOTO);
-          setNextBoy();
         }
+        setNextBoy();
       }
     };
 
@@ -93,7 +93,6 @@ export const BoyPhoto = () => {
       }
     };
     const handleKeyPress = (e) => {
-      console.log(e.key);
       if (e.key === "ArrowRight") {
         handleNext();
       } else if (e.key === "ArrowLeft") {

@@ -60,6 +60,10 @@ export const BoysProvider = ({ children }) => {
     }
   };
 
+  const resetBoys = () => {
+    setCurrentBoyIndex(0);
+  };
+
   const currentBoy = boys[currentBoyIndex];
 
   return (
@@ -69,6 +73,7 @@ export const BoysProvider = ({ children }) => {
         currentBoy,
         setNextBoy,
         setPreviousBoy,
+        resetBoys,
         totalBoys,
       }}
     >
