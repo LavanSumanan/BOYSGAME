@@ -66,12 +66,12 @@ export const BoyPhoto = () => {
       ) {
         setSubscreen(SUBSCREENS.VIDEO);
       } else if (subscreen.id === SUBSCREENS.VIDEO.id) {
-        setNextBoy();
         // save last boy for ALL OR NOTHING
         if (currentBoyIndex === totalBoys - 1) {
           setScreen(SCREEN_NAMES.ALL_OR_NOTHING_INFO);
         } else {
           setSubscreen(SUBSCREENS.PHOTO);
+          setNextBoy();
         }
       }
     };
