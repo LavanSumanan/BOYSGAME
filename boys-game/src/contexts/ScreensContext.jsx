@@ -8,6 +8,8 @@ import { Ready } from "../pages/Ready";
 import { BoyPhoto } from "../pages/BoyPhoto";
 import { AllOrNothingInfo } from "../pages/AllOrNothingInfo";
 import { AllOrNothing } from "../pages/AllOrNothing";
+import { Drumroll } from "../pages/Drumroll";
+import { Standings } from "../pages/Standings";
 
 /* Screen
 id: string
@@ -15,6 +17,10 @@ component: React.Component
 */
 
 const ScreensContext = createContext();
+
+const Error = () => {
+  return <div>Error, GGs</div>;
+};
 
 const screens = [
   { id: SCREEN_NAMES.TITLE, component: Title, hasFooter: false },
@@ -31,9 +37,13 @@ const screens = [
     component: AllOrNothing,
     hasFooter: true,
   },
-  { id: SCREEN_NAMES.DRUMROLL, component: null, hasFooter: true },
-  { id: SCREEN_NAMES.STANDINGS, component: null, hasFooter: false },
-  { id: SCREEN_NAMES.ERROR, component: null, hasFooter: false },
+  { id: SCREEN_NAMES.DRUMROLL, component: Drumroll, hasFooter: true },
+  { id: SCREEN_NAMES.STANDINGS, component: Standings, hasFooter: false },
+  {
+    id: SCREEN_NAMES.ERROR,
+    component: Error,
+    hasFooter: false,
+  },
 ];
 
 export const ScreenProvider = ({ children }) => {
