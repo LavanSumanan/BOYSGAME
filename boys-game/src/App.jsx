@@ -22,14 +22,15 @@ function App() {
   }, []);
 
   return (
-    <ScreenProvider>
-      <TeamsProvider>
-        <BoysProvider>
-          <h1>BOYS UP CLOSE</h1> {/* TODO: remove */}
-          <Screen />
-        </BoysProvider>
-      </TeamsProvider>
-    </ScreenProvider>
+    <div style={{ height: "100vh" }}>
+      <ScreenProvider>
+        <TeamsProvider>
+          <BoysProvider>
+            <Screen />
+          </BoysProvider>
+        </TeamsProvider>
+      </ScreenProvider>
+    </div>
   );
 }
 

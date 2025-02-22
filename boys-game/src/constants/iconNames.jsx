@@ -1,8 +1,11 @@
+import one from "../assets/icons/one.png";
+import two from "../assets/icons/two.png";
+import three from "../assets/icons/three.png";
+import four from "../assets/icons/four.png";
+
 export const TEAM_ICONS = {
-  ONE: "one.png",
-  TWO: "two.png",
-  THREE: "three.png",
-  FOUR: "four.png",
-  FIVE: "five.png",
-  SIX: "six.png",
+  ONE: one,
+  TWO: two,
+  THREE: three,
+  FOUR: four,
 };
